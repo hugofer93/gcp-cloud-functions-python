@@ -1,0 +1,110 @@
+Format: 1.8
+Date: Wed, 07 Dec 2022 01:11:58 +0000
+Source: python3.9
+Binary: python3.9 python3.9-venv libpython3.9-stdlib python3.9-minimal libpython3.9-minimal libpython3.9 python3.9-examples python3.9-dev libpython3.9-dev libpython3.9-testsuite idle-python3.9 python3.9-dbg libpython3.9-dbg python3.9-tk python3.9-gdbm python3.9-tk-dbg python3.9-gdbm-dbg python3.9-distutils python3.9-lib2to3 python3.9-full
+Architecture: source all amd64
+Version: 3.9.16-1+bionic1
+Distribution: bionic
+Urgency: medium
+Maintainer: Matthias Klose <doko@debian.org>
+Changed-By: Anthony Sottile (deadsnakes) <asottile+deadsnakes@umich.edu>
+Description:
+ idle-python3.9 - IDE for Python (v3.9) using Tkinter
+ libpython3.9 - Shared Python runtime library (version 3.9)
+ libpython3.9-dbg - Debug Build of the Python Interpreter (version 3.9)
+ libpython3.9-dev - Header files and a static library for Python (v3.9)
+ libpython3.9-minimal - Minimal subset of the Python language (version 3.9)
+ libpython3.9-stdlib - Interactive high-level object-oriented language (standard library
+ libpython3.9-testsuite - Testsuite for the Python standard library (v3.9)
+ python3.9  - Interactive high-level object-oriented language (version 3.9)
+ python3.9-dbg - Debug Build of the Python Interpreter (version 3.9)
+ python3.9-dev - Header files and a static library for Python (v3.9)
+ python3.9-distutils - distutils package for Python (version 3.9)
+ python3.9-examples - Examples for the Python language (v3.9)
+ python3.9-full - Python Interpreter with complete class library (version 3.9)
+ python3.9-gdbm - GNU dbm database support for Python (version 3.9)
+ python3.9-gdbm-dbg - GNU dbm database support for Python (version 3.9 debug extension)
+ python3.9-lib2to3 - lib2to3 package for Python (version 3.9)
+ python3.9-minimal - Minimal subset of the Python language (version 3.9)
+ python3.9-tk - Tkinter - Writing Tk applications with Python (version 3.9)
+ python3.9-tk-dbg - Tkinter - Writing Tk applications with Python (version 3.9 debug
+ python3.9-venv - Interactive high-level object-oriented language (pyvenv binary, v
+Changes:
+ python3.9 (3.9.16-1+bionic1) bionic; urgency=medium
+ .
+   * Python 3.9.16 release.
+Checksums-Sha1:
+ da38aa09cf692dadf0d90f6a9cdf56b2f483d0ca 2922 python3.9_3.9.16-1+bionic1.dsc
+ 051e19fa396735d080dd9e3dcb5c8c51bf492884 26371041 python3.9_3.9.16.orig.tar.gz
+ 18c3add89240cbdca84331e45795351f815a0ff2 195028 python3.9_3.9.16-1+bionic1.debian.tar.xz
+ 5facf3c0e2bc28e12a68ac83afbf9b8d3bffa1b7 389624 idle-python3.9_3.9.16-1+bionic1_all.deb
+ ce7189cee0e30475e302d6efb25111cdb4b28e20 13473068 libpython3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ 79db2e316cdd158ff314cc18446bc34824d1f01e 50584696 libpython3.9-dev_3.9.16-1+bionic1_amd64.deb
+ 4fd88957a185e4c7135e598f3fa71b3e8e443fda 805632 libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ 8f8c2d72f1536074967711b027fdfd776d721318 1680072 libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb
+ 5c039cf86fc3cb6093ec2870d101a17be9c5f8bd 3195120 libpython3.9-testsuite_3.9.16-1+bionic1_all.deb
+ 55d444a76f9b66477cbc57c00eb346234ae94367 1751528 libpython3.9_3.9.16-1+bionic1_amd64.deb
+ 1d3341a77b26657fd66dccd11fb61628afefb72d 15554356 python3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ ca02d171a242c66ffcba23b3c990c7f5f8d62310 500656 python3.9-dev_3.9.16-1+bionic1_amd64.deb
+ 4d417ff003338ad048dd1e378cff12d92d186452 190112 python3.9-distutils_3.9.16-1+bionic1_all.deb
+ 942a8f6d1198b7b8eb67a947ab395b4fc0a35da1 787416 python3.9-examples_3.9.16-1+bionic1_all.deb
+ 473e94579c8a3fd30644a1e70f58e5bb56757d9e 1264 python3.9-full_3.9.16-1+bionic1_amd64.deb
+ 2d54540cc1bc523a4bfcee3c5081b6b53083fb1a 92176 python3.9-gdbm-dbg_3.9.16-1+bionic1_amd64.deb
+ 59d939f0931b40dd85b9aec51b5df29ec1d9390e 64264 python3.9-gdbm_3.9.16-1+bionic1_amd64.deb
+ 05ba421a17ab59a425326b6850dbb3c94ed62d9f 125000 python3.9-lib2to3_3.9.16-1+bionic1_all.deb
+ 40eccbc7d67ad658a4f2d8398a32defb6e11b3ad 1938472 python3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ 3e6cde2aa6032df61759ddd514b4f6ade457e2bc 212132 python3.9-tk-dbg_3.9.16-1+bionic1_amd64.deb
+ 3b7aae25a1515b2d1dd011884fb5f3ba4797459b 146400 python3.9-tk_3.9.16-1+bionic1_amd64.deb
+ 537e97b984070813579825bb2ae063d584808679 2733204 python3.9-venv_3.9.16-1+bionic1_amd64.deb
+ 91179b9a2e5e0a850ff9df53cf317a43b901af43 17157 python3.9_3.9.16-1+bionic1_amd64.buildinfo
+ 385e76096ec272e66a6f71a6bcdfb0b05447265a 494408 python3.9_3.9.16-1+bionic1_amd64.deb
+Checksums-Sha256:
+ 3f16c068a3bfc9c21f705a48158484b74c31763c7cf60f3064bc92f93df54093 2922 python3.9_3.9.16-1+bionic1.dsc
+ 60df47f83da1d938a4070b2e237740bd0249fba71551abf1bdbae5667533983b 26371041 python3.9_3.9.16.orig.tar.gz
+ c9123a0fa026ba9c1279ad0ee746e6aea664ac340697ed5f0fb14edd359a25d4 195028 python3.9_3.9.16-1+bionic1.debian.tar.xz
+ c2513c1efc3f78bd8db4aae10d927612c3b824987b96aaabb7ab80cdd3030c70 389624 idle-python3.9_3.9.16-1+bionic1_all.deb
+ 871028384f719ea26f297ae4fcbfbf24c148a3fbfb85c33f10e7e34abb0e3ced 13473068 libpython3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ 2a541b896d953624446d3972c3edbf2d6d7d38bfd3e49fbcea768b0bc9cc6fe3 50584696 libpython3.9-dev_3.9.16-1+bionic1_amd64.deb
+ b33d86d5567da3a2abb8eb7ebb1ed4416fe3c72d1197c32412dd9f8319423054 805632 libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ 1a73780721cb6c7509bccb4f78e58ed2027f6278867e6313b221d3b14e32a92c 1680072 libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb
+ 1443974572e033e6600ab6c4621f4673d27a99b73f39d557b61b2f00c7614553 3195120 libpython3.9-testsuite_3.9.16-1+bionic1_all.deb
+ c2132a008cb8b8f4a8e8399bf96cad7b460dc647052198c282f66c7ad8c80636 1751528 libpython3.9_3.9.16-1+bionic1_amd64.deb
+ a98ef1b05e08267f39b713202a48d5819272b77e286e6c69ce4775afa3daebbe 15554356 python3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ d06e1a9156a2820766163ef0507798751942ba7b22de9e9d91434a86ad1ea009 500656 python3.9-dev_3.9.16-1+bionic1_amd64.deb
+ 3d48a63ce9f8503dfb48090d6d015fb4ad723e2e0b12c9f06b6c9d7c5ebad3c0 190112 python3.9-distutils_3.9.16-1+bionic1_all.deb
+ 128977d8917f2c8f9aff4caeb4ceeb2b973d210940cf5f27dc38a62dcbea8773 787416 python3.9-examples_3.9.16-1+bionic1_all.deb
+ 8f05aa5dcd4d70300911a46c6a08df62780f17e27d0aa5611e628f897a00f31e 1264 python3.9-full_3.9.16-1+bionic1_amd64.deb
+ a4a8107b68d5270952bc2dcf16743230749bf7fd4afdde5cf47243f37ba179a8 92176 python3.9-gdbm-dbg_3.9.16-1+bionic1_amd64.deb
+ 79bba7a8daee18aeb4ae21b733b31831f5b2e084ddd348bc9a34d392bf4758c7 64264 python3.9-gdbm_3.9.16-1+bionic1_amd64.deb
+ 4cf958f4c6835140b536347803838b0aa0dfe1883e0f45590b42dfbd4722aaa6 125000 python3.9-lib2to3_3.9.16-1+bionic1_all.deb
+ 4fa8a71d9bf597b1c7256c3e0ee86edcefe21139190f9a933ce2ddf866b0cab7 1938472 python3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ 0a7013ac8779615e1c9d168319bc564fd3dd3ec6527c35f4ef1ecea06b39d399 212132 python3.9-tk-dbg_3.9.16-1+bionic1_amd64.deb
+ abf3ac3ef2d4be8496c6df551f04a44b76de2526be5728c357ee6faaba55d379 146400 python3.9-tk_3.9.16-1+bionic1_amd64.deb
+ 6832a0a3ca424f2626b8ac4b1126f441cadf83ceef31ea4745e4224c7eb1c3ca 2733204 python3.9-venv_3.9.16-1+bionic1_amd64.deb
+ 160d908ecba5cbbeb391ab0bf63d5ccf0e5156bd97e20c32da56fcb01b70fbb9 17157 python3.9_3.9.16-1+bionic1_amd64.buildinfo
+ c8e23a36c3829c10a2ee743a580e7e7c2dffa9fb3332d2594d695584f2a7778f 494408 python3.9_3.9.16-1+bionic1_amd64.deb
+Files:
+ b2323675da9b217a70b4aa599ec577e2 2922 python optional python3.9_3.9.16-1+bionic1.dsc
+ d37938a84da983dcb5646bc6befc0b88 26371041 python optional python3.9_3.9.16.orig.tar.gz
+ 1b9e29abf50eb7b9108dd805ea7486f6 195028 python optional python3.9_3.9.16-1+bionic1.debian.tar.xz
+ 6ab583d3332ab76d4e6481d37240bfc0 389624 python optional idle-python3.9_3.9.16-1+bionic1_all.deb
+ 56517b9b6ca2ddc93a1bd32b4215d4bf 13473068 debug optional libpython3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ e397be4b54937d8c53ff514ec061691b 50584696 libdevel optional libpython3.9-dev_3.9.16-1+bionic1_amd64.deb
+ 976b0cfbf7a0e15a779c894bc6a06cea 805632 python optional libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ f1dd0c4b34efeb88553190268df7609b 1680072 python optional libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb
+ 0c6f3ac632e68d6d2cd0cac5b7cbfc7a 3195120 libdevel optional libpython3.9-testsuite_3.9.16-1+bionic1_all.deb
+ 64d53bf99ba2a60b4dc65a3c536ff68b 1751528 libs optional libpython3.9_3.9.16-1+bionic1_amd64.deb
+ daabcc374daebaed68fd5938bbad5727 15554356 debug optional python3.9-dbg_3.9.16-1+bionic1_amd64.deb
+ 534ce512ed15d1cef6a999e31edb191a 500656 python optional python3.9-dev_3.9.16-1+bionic1_amd64.deb
+ 316736ae8daa6b82dc320d51b281d917 190112 python optional python3.9-distutils_3.9.16-1+bionic1_all.deb
+ 0e1b762582cac5bc539878ff099f51fd 787416 python optional python3.9-examples_3.9.16-1+bionic1_all.deb
+ 07eb7eb488ab7ade165e3776ada8b2cb 1264 python optional python3.9-full_3.9.16-1+bionic1_amd64.deb
+ 60f38ec482c408cdb34b041ceff5f862 92176 debug extra python3.9-gdbm-dbg_3.9.16-1+bionic1_amd64.deb
+ 69fddc5e380b8cf03d9c7bc1d6d72eca 64264 python optional python3.9-gdbm_3.9.16-1+bionic1_amd64.deb
+ 44cbf07b808d5bea6974d1a6254d9510 125000 python optional python3.9-lib2to3_3.9.16-1+bionic1_all.deb
+ 218e56834b8653471ac8822b56480a28 1938472 python optional python3.9-minimal_3.9.16-1+bionic1_amd64.deb
+ 0fdeb49e1f84aa2c1fe366f99d2fe945 212132 debug extra python3.9-tk-dbg_3.9.16-1+bionic1_amd64.deb
+ 129f33587f1e7a968f3b02415f57024a 146400 python optional python3.9-tk_3.9.16-1+bionic1_amd64.deb
+ 16dd741ea2f28799600713912c3d83f5 2733204 python optional python3.9-venv_3.9.16-1+bionic1_amd64.deb
+ 65fa62c2ff7e13a40014335ac1ff37ee 17157 python optional python3.9_3.9.16-1+bionic1_amd64.buildinfo
+ 91980de1a18e65e1b31112d34ebe04ef 494408 python optional python3.9_3.9.16-1+bionic1_amd64.deb
