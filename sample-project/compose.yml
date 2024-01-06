@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  project:
+    container_name: "your-container-name"
+    build: .
+    environment:
+      - DEBUG=true
+      - GOOGLE_APPLICATION_CREDENTIALS=/root/.gcloud/credentials.json
+    volumes:
+      - ".:/opt/project"
+      - "$HOME/.config/gcloud/application_default_credentials.json:/root/.gcloud/credentials.json:ro"
+    ports:
+      - "8080:8080"
+    command: >
+      sh -c "poetry install --no-root && tail -f /dev/null"
+    restart: "unless-stopped"
