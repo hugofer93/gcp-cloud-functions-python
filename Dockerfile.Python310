@@ -105,10 +105,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         libbs2b0=3.1.0+dfsg-2.2build1 \
                                         libbsd0=0.11.5-1 \
                                         libbz2-1.0=1.0.8-5build1 \
-                                        libc-bin=2.35-0ubuntu3.5 \
-                                        libc-dev-bin=2.35-0ubuntu3.5 \
-                                        libc6=2.35-0ubuntu3.5 \
-                                        libc6-dev=2.35-0ubuntu3.5 \
+                                        libc-bin=2.35-0ubuntu3.6 \
+                                        libc-dev-bin=2.35-0ubuntu3.6 \
+                                        libc6=2.35-0ubuntu3.6 \
+                                        libc6-dev=2.35-0ubuntu3.6 \
                                         libcaca0=0.99.beta19-2.2ubuntu4 \
                                         libcairo-gobject2=1.16.0-5ubuntu2 \
                                         libcairo2=1.16.0-5ubuntu2 \
@@ -412,7 +412,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         libzvbi-common=0.2.35-19 \
                                         libzvbi0=0.2.35-19 \
                                         linux-libc-dev=5.15.0-91.101 \
-                                        locales=2.35-0ubuntu3.5 \
+                                        locales=2.35-0ubuntu3.6 \
                                         login=1:4.8.1-2ubuntu2.1 \
                                         logsave=1.46.5-2ubuntu1.1 \
                                         lsb-base=11.1.0ubuntu4 \

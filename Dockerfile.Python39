@@ -607,12 +607,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         zlib1g=1:1.2.11.dfsg-0ubuntu2.2 \
     && export DEBIAN_FRONTEND=dialog \
     # Development dependencies
-    && dpkg -i /tmp/python3.9/python3.9-lib2to3_3.9.16-1+bionic1_all.deb \
-    && dpkg -i /tmp/python3.9/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9-minimal_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9-distutils_3.9.16-1+bionic1_all.deb \
+    && apt-get install /tmp/python3.9/python3.9-lib2to3_3.9.16-1+bionic1_all.deb \
+    && apt-get install /tmp/python3.9/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install /tmp/python3.9/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install /tmp/python3.9/python3.9-minimal_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install /tmp/python3.9/python3.9_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install /tmp/python3.9/python3.9-distutils_3.9.16-1+bionic1_all.deb \
+    && rm -rf /tmp/python3.9/* \
     && wget -qO- https://install.python-poetry.org | python3.9 - \
     # Delete cache
     && rm -rf /var/lib/apt/lists/*
