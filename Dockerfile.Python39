@@ -1,4 +1,46 @@
 # syntax=docker/dockerfile:1
+FROM ubuntu:18.04 AS build
+
+WORKDIR /build
+
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get update && apt-get upgrade -y && apt-get autoremove -y \
+    && apt-get install -yq --force-yes  devscripts \
+                                        git \
+                                        git-buildpackage \
+                                        build-essential \
+                                        python3-pip \
+                                        python3-distutils-extra \
+                                        debhelper \
+                                        quilt \
+                                        sharutils \
+                                        libreadline-dev \
+                                        libncursesw5-dev \
+                                        zlib1g-dev \
+                                        libbz2-dev \
+                                        liblzma-dev \
+                                        libgdbm-dev \
+                                        libdb-dev \
+                                        tk-dev \
+                                        blt-dev \
+                                        libssl-dev \
+                                        libmpdec-dev \
+                                        libbluetooth-dev \
+                                        locales \
+                                        libsqlite3-dev \
+                                        libffi-dev \
+                                        libgpm2 \
+                                        time \
+                                        xvfb \
+                                        python3-sphinx \
+                                        texinfo \
+    && export DEBIAN_FRONTEND=dialog \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/deadsnakes/python3.9.git -b ubuntu/bionic \
+    && cd python3.9 && gbp buildpackage --git-ignore-branch; exit 0
+
+
 FROM ubuntu:18.04
 
 LABEL mantainer="Hugo Silva Álvarez <hugofer93@gmail.com>"
@@ -15,7 +57,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     POETRY_VIRTUALENVS_IN_PROJECT=1
 ENV PATH="$POETRY_HOME/bin:$PATH"
 
-COPY ./resources/ubuntu18.04/packages/python3.9/ /tmp/python3.9/
+COPY --from=build /build/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb     /tmp/python3.9/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb
+COPY --from=build /build/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb    /tmp/python3.9/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb
+COPY --from=build /build/python3.9-lib2to3_3.9.16-1+bionic1_all.deb         /tmp/python3.9/python3.9-lib2to3_3.9.16-1+bionic1_all.deb
+COPY --from=build /build/python3.9-distutils_3.9.16-1+bionic1_all.deb       /tmp/python3.9/python3.9-distutils_3.9.16-1+bionic1_all.deb
+COPY --from=build /build/python3.9-minimal_3.9.16-1+bionic1_amd64.deb       /tmp/python3.9/python3.9-minimal_3.9.16-1+bionic1_amd64.deb
+COPY --from=build /build/python3.9_3.9.16-1+bionic1_amd64.deb               /tmp/python3.9/python3.9_3.9.16-1+bionic1_amd64.deb
+COPY --from=build /build/python3.9-venv_3.9.16-1+bionic1_amd64.deb          /tmp/python3.9/python3.9-venv_3.9.16-1+bionic1_amd64.deb
 
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
     # System Packages Included in Cloud Functions
@@ -27,13 +75,12 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         aspell=0.60.7~20110707-4ubuntu0.2 \
                                         aspell-en=2017.08.24-0-0.1 \
                                         at-spi2-core=2.28.0-1 \
-                                        base-files=10.1ubuntu2.11 \
+                                        base-files=10.1ubuntu2.12 \
                                         base-passwd=3.5.44 \
                                         bash=4.4.18-2ubuntu1.3 \
                                         bsdutils=1:2.31.1-0.4ubuntu3.7 \
                                         bzip2=1.0.6-8.1ubuntu0.2 \
                                         ca-certificates=20230311ubuntu0.18.04.1 \
-                                        # chardet=3.0.4 \
                                         python3-chardet=3.0.4-1 \
                                         coreutils=8.28-1ubuntu1 \
                                         cpp=4:7.4.0-1ubuntu2.3 \
@@ -48,7 +95,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         dictionaries-common=1.27.2 \
                                         diffutils=1:3.6-1 \
                                         dirmngr=2.2.4-1ubuntu1.6 \
-                                        distro-info-data=0.37ubuntu0.17 \
+                                        distro-info-data=0.37ubuntu0.18 \
                                         dpkg=1.19.0.5ubuntu2.4 \
                                         e2fsprogs=1.44.1-1ubuntu1.4 \
                                         emacsen-common=2.0.8 \
@@ -606,13 +653,15 @@ RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y \
                                         xz-utils=5.2.2-1.3ubuntu0.1 \
                                         zlib1g=1:1.2.11.dfsg-0ubuntu2.2 \
     && export DEBIAN_FRONTEND=dialog \
+    && apt-get install --force-yes /tmp/python3.9/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install --force-yes /tmp/python3.9/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install --force-yes /tmp/python3.9/python3.9-lib2to3_3.9.16-1+bionic1_all.deb \
+    && apt-get install --force-yes /tmp/python3.9/python3.9-distutils_3.9.16-1+bionic1_all.deb \
+    && apt-get install --force-yes /tmp/python3.9/python3.9-minimal_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install --force-yes /tmp/python3.9/python3.9_3.9.16-1+bionic1_amd64.deb \
+    && apt-get install --force-yes /tmp/python3.9/python3.9-venv_3.9.16-1+bionic1_amd64.deb \
+    && rm -rf /tmp/python3.9 \
     # Development dependencies
-    && dpkg -i /tmp/python3.9/python3.9-lib2to3_3.9.16-1+bionic1_all.deb \
-    && dpkg -i /tmp/python3.9/libpython3.9-minimal_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/libpython3.9-stdlib_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9-minimal_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9_3.9.16-1+bionic1_amd64.deb \
-    && dpkg -i /tmp/python3.9/python3.9-distutils_3.9.16-1+bionic1_all.deb \
     && wget -qO- https://install.python-poetry.org | python3.9 - \
     # Delete cache
     && rm -rf /var/lib/apt/lists/*

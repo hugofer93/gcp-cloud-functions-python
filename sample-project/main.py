@@ -7,7 +7,6 @@ from functions_framework import http as functions_framework_http
 
 load_dotenv()
 
-
 GCP_PROJECT_ID = os_environ.get('GCP_PROJECT_ID')
 
 BIGQUERY_DATASET = os_environ.get('BIGQUERY_DATASET')

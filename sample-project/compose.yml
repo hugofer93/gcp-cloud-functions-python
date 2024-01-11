@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   project:
     container_name: "your-container-name"
